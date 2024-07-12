@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family:'Courier New', Courier, monospace;
+            background-color: #070505;
+        }
+        nav {
+            width: 100%;
+            background: linear-gradient(rgb(190, 125, 190), rgb(13, 13, 10));
+            display: flex;
+            justify-content: flex-end;
+            padding: 12px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #070505;
+        }
+      
+        section {
+            padding: 30px 20px;
+            color: white;
+        
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            
+        }
+        .image-container {
+            width: 300px; 
+            height: 400px; 
+            overflow: hidden; 
+            margin: 20px;
+            opacity: 0; 
+            transform: translateY(100%);
+            animation: slideIn 1s ease-out forwards;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the container */
+        }
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .about {
+            flex: 1;
+            margin-left: 50px;
+            margin-top: 20px; 
+            opacity: 0; 
+            transform: translateX(-100%); 
+            animation: textSlideIn 1s ease-out forwards 1s; 
+        }
+
+        .about p{
+            font-size: 20px;
+            text-align: justify; 
+            border: 1px solid rgb(190, 125, 190);
+            padding: 15px; 
+            border-radius: 3px;
+            margin-top: 30px; 
+        }
+        @keyframes textSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            
+            
+        }
+
+        .skills-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .skill {
+            width: 150px;
+            text-align: center;
+            color: white;
+            opacity: 0;
+            
+            transform: translateY(100%); 
+        }
+        
+        .skill p {
+            margin-top: 20px;
+            font-size: 20px;
+        
+        }
+
+        .skill p:hover {
+            color: rgb(190, 125, 190);
+        }
+
+        .project-container {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .project-image {
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            opacity: 0; /* Initially hidden */
+            transform: translateX(-100%); /* Initial position (off-screen) */
+        }
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .project-description {
+            flex: 1;
+            opacity: 0; /* Initially hidden */
+            transform: translateX(100%); /* Initial position (off-screen) */
+        }
+        .project-description h2 {
+            margin-bottom: 10px;
+        }
+        .project-description p {
+            text-align: justify;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+        
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes textSlideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+       
+        .animate {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        .text-animate {
+            animation: textSlideIn 1s ease-out forwards;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="nav-item"><a href="#home" class="nav-link">Home</a><div class="animation"></div></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About</a><div class="animation"></div></li>
+            <li class="nav-item"><a href="#skills" class="nav-link">Skills</a><div class="animation"></div></li>
+            <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a><div class="animation"></div></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a><div class="animation"></div></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <div class="container">
+            <div class="image-container">
+                <img src="img.jpg" alt="Sample Image">
+            </div>
+            <div class="about">
+                <h1>ABOUT ME</h1>
+                <br>
+                <p>
+                    Hello, I am Sanghamitra Dutta from Baleshwar, Odisha. I persued B.Tech in Computer Science and Engineering, have recently graduated from Lovely Professional University in the month of June. Looking for opportunities in Frontend web development where i can showcase my skills and also upgrade myslef by learning new technologies.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <h1 class="skills-heading">SKILLS</h1>
+        <div class="skills-container">
+            <div class="skill">
+                <p>HTML</p>
+            </div>
+            <div class="skill">
+                
+                <p>CSS</p>
+            </div>
+            <div class="skill">
+                
+                <p>Javascript</p>
+            </div>
+            <div class="skill">
+                <p>React.js</p>
+            </div>
+            <div class="skill">
+                <p>Node.js</p>
+            </div>
+            <div class="skill">
+                <p>MySQL</p>
+
+            </div>
+            <div class="skill">
+                <p>Linux</p>
+            </div>
+            <div class="skill">
+                <p>Visual Studio Code</p>
+            </div>
+            <div class="skill">
+                <p>Git/Github</p>
+            </div>
+            <div class="skill">
+                <p>Swift</p>
+            </div>
+            <div class="skill">
+                <p>Python</p>
+            </div>
+            <div class="skill">
+                <p>Oracle</p>
+            </div>
+            <div class="skill">
+                <p>MS Windows</p>
+            </div>
+            <div class="skill">
+                <p>MS Excel</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="project-container">
+            <div class="project-image">
+                <img src="project1.jpg" alt="Project 1">
+            </div>
+            <div class="project-description">
+                <h2>Project 1</h2>
+                <p>
+                    This is a brief description of Project 1. You can add more details here about what the project is, what technologies were used, and any other relevant information.
+                </p>
+            </div>
+        </div>
+        <div class="project-container">
+            <div class="project-image">
+                <img src="project2.jpg" alt="Project 2">
+            </div>
+            <div class="project-description">
+                <h2>Project 2</h2>
+                <p>
+                    This is a brief description of Project 2. You can add more details here about what the project is, what technologies were used, and any other relevant information.
+                </p>
+            </div>
+        </div>
+        <!-- Add more project containers as needed -->
+    </section>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('.nav-item');
+            const animations = document.querySelectorAll('.animation');
+
+            navItems.forEach((item, index) => {
+                item.addEventListener('mouseover', () => {
+                    animations.forEach(animation => animation.style.width = '0');
+                    item.querySelector('.animation').style.width = '100%';
+                });
+                item.addEventListener('mouseout', () => 
+                    item.querySelector('.animation').style.width = '0');
+                });
+            });
+
+            const setActive = () => {
+                const sections = document.querySelectorAll('section');
+                const scrollY = window.pageYOffset;
+
+                sections.forEach(current => {
+                    const sectionHeight = current.offsetHeight;
+                    const sectionTop = current.offsetTop - 50;
+                    const sectionId = current.getAttribute('id');
+
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        document.querySelector('.nav-link[href*=' + sectionId + ']').parentNode.classList.add('active');
+                    } else {
+                        document.querySelector('.nav-link[href*=' + sectionId + ']').parentNode.classList.remove('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', setActive);
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('about')) {
+                            entry.target.classList.add('text-animate');
+                        } else if (entry.target.classList.contains('image-container')) {
+                            entry.target.classList.add('image-animate');
+                        } else if (entry.target.classList.contains('skill')) {
+                            entry.target.classList.add('animate');
+                        } else if (entry.target.classList.contains('project-image')) {
+                            entry.target.classList.add('animate-left');
+                        } else if (entry.target.classList.contains('project-description')) {
+                            entry.target.classList.add('animate-right');
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            document.querySelectorAll('.image-container, .about, .skill').forEach(element => {
+                observer.observe(element);
+            });
+        
+    </script>
+</body>
+</html>
