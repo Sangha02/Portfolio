@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:'Courier New', Courier, monospace;
+    background-color: #070505;
+}
+nav {
+    width: 100%;
+    background: linear-gradient(rgb(190, 125, 190), rgb(13, 13, 10));
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li {
+    position: relative;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #070505;
+}
+
+section {
+    padding: 30px 20px;
+    color: white;
+
+}
+.container {
+    display: flex;
+    align-items: flex-start;
+    
+}
+.image-container {
+    width: 300px; 
+    height: 400px; 
+    overflow: hidden; 
+    margin: 20px;
+    opacity: 0; 
+    transform: translateY(100%);
+    animation: slideIn 1s ease-out forwards;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.about {
+    flex: 1;
+    margin-left: 50px;
+    margin-top: 20px; 
+    opacity: 0; 
+    transform: translateX(-100%); 
+    animation: textSlideIn 1s ease-out forwards 1s; 
+}
+
+.about p{
+    font-size: 20px;
+    text-align: justify; 
+    border: 1px solid rgb(190, 125, 190);
+    padding: 15px; 
+    border-radius: 3px;
+    margin-top: 30px; 
+}
+@keyframes textSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    
+    
+}
+
+.skills-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.skill {
+    width: 150px;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    
+    transform: translateY(100%); 
+}
+
+.skill p {
+    margin-top: 20px;
+    font-size: 20px;
+
+}
+
+.skill p:hover {
+    color: rgb(190, 125, 190);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes textSlideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeInUp 1s ease-out forwards;
+}
+.text-animate {
+    animation: textSlideIn 1s ease-out forwards;
+}
+
+.project-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    flex-direction: row; /* Default direction */
+}
+
+.project-container:nth-child(even) {
+    flex-direction: row-reverse; /* Reverse direction for even projects */
+}
+#projects {
+    text-align: center;
+}
+
+.project-image {
+    flex: 1;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.project-container:nth-child(even) .project-image {
+    transform: translateX(100%); /* Adjust for reversed direction */
+    animation: slideInRight 2s ease-out forwards;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-description {
+    flex: 2;
+    margin-left: 20px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideInRight 1s ease-out forwards 1s;
+}
+
+.project-container:nth-child(even) .project-description {
+    margin-left: 0;
+    margin-right: 20px; /* Adjust margin for reversed direction */
+    transform: translateX(-100%);
+    animation: slideInLeft 1s ease-out forwards 1s;
+}
+
+.project-description h2 {
+    margin-bottom: 10px;
+}
+
+.project-description p {
+    font-size: 18px;
+    text-align: justify;
+    border: 1px solid rgb(190, 125, 190);
+    padding: 15px;
+    border-radius: 3px;
+}
+
+/* Specific sizes for each project */
+.project-container.project1 .project-image {
+    width: 300px;
+    height: 400px;
+}
+
+.project-container.project2 .project-image {
+    width: 200px;
+    height: 400px;
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
